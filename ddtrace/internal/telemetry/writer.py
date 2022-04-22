@@ -171,10 +171,10 @@ class TelemetryWriter(PeriodicService):
         """Sent when TelemetryWriter is enabled or forks"""
         # pkg_resources import is inlined for performance reasons
         # This import is an expensive operation
-        import pkg_resources
 
+        # import pkg_resources
         payload = {
-            "dependencies": [{"name": pkg.project_name, "version": pkg.version} for pkg in pkg_resources.working_set],
+            # "dependencies": [{"name": pkg.project_name, "version": pkg.version} for pkg in pkg_resources.working_set],
             "integrations": self._flush_integrations_queue(),
             "configurations": [],
         }
